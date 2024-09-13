@@ -1,1 +1,1 @@
-# Heattol_db
+# Freshwater thermal tolerance
