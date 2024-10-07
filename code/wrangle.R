@@ -15,7 +15,11 @@ library(patchwork)
 library(ggridges)
 library(viridis)
 
+library(data.table)
+
 # load data ---------------------------------------------------------------
+
+tt <- fread(file.path(data, 'thermtol_tests.csv'), na.strings = '', encoding = "UTF-8")
 
 tol <- read.csv('data/thermtol_tests.csv')
 tax <- read.csv('data/thermtol_taxonomy.csv')
