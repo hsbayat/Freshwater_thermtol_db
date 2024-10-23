@@ -4,11 +4,12 @@
 
 # Final processing of freshwater thermal tolerance dataset
 
-# by Helena S. Bayat
+# by H. S. Bayat
 
 # last edited: 21/10/2024
 
 # setup -------------------------------------------------------------------
+
 library(tidyverse)
 
 # load data ---------------------------------------------------------------
@@ -96,21 +97,21 @@ tol <- tol %>% mutate(acclim_time_minutes = case_when((acclim_time_unit == "minu
 
 # put units into common currency
 # for test time
-tol <- tol %>% mutate(test_time_minutes1 = case_when((metric == "ltmax") ~ (tmax - acclim_temp)/ramp,
-                                              (metric == "ltmin") ~ (acclim_temp - tmax)/ramp,
-                                              (metric == "ctmin") ~ (acclim_temp - tmax)/ramp,
-                                              (metric == "ctmax") ~ (tmax - acclim_temp)/ramp,
+tol <- tol %>% mutate(test_time_minutes1 = case_when((metric == "ltmax") ~ (tol - acclim_temp)/ramp,
+                                              (metric == "ltmin") ~ (acclim_temp - tol)/ramp,
+                                              (metric == "ctmin") ~ (acclim_temp - tol)/ramp,
+                                              (metric == "ctmax") ~ (tol - acclim_temp)/ramp,
                                               (test_time_unit == "minutes") ~ test_time,
                                               (test_time_unit == "hours") ~ test_time*60,
                                               (test_time_unit == "days") ~ test_time*1440,
                                               (test_time_unit == "weeks") ~ test_time*10080,
                                               (test_time_unit == "months") ~ test_time*302400))
 tol <- tol %>% mutate(test_time_minutes = case_when((!is.na(test_time_minutes1)) ~ test_time_minutes1, 
-                                                    (is.na(test_time_minutes1) & metric == "ctmax") ~ (tmax - start_temp)/ramp,
-                                                    (is.na(test_time_minutes1) & metric == "ltmax") ~ (tmax - start_temp)/ramp,
-                                                    (is.na(test_time_minutes1) & metric == "ctmin") ~ (start_temp - tmax)/ramp,
-                                                    (is.na(test_time_minutes1) & metric == "ltmin") ~ (start_temp - tmax)/ramp))
-tol <- tol[,-74]
+                                                    (is.na(test_time_minutes1) & metric == "ctmax") ~ (tol - start_temp)/ramp,
+                                                    (is.na(test_time_minutes1) & metric == "ltmax") ~ (tol - start_temp)/ramp,
+                                                    (is.na(test_time_minutes1) & metric == "ctmin") ~ (start_temp - tol)/ramp,
+                                                    (is.na(test_time_minutes1) & metric == "ltmin") ~ (start_temp - tol)/ramp))
+tol <- tol[,-74] # remove unneeded column
 
 # remove two records of terrestrial imagines
 tol <- tol[-c(638,641),]
