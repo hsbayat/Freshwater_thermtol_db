@@ -121,6 +121,40 @@ tt1 <- merge(tol, tax, by = "tax_id")
 tt2 <- merge(tt1, clim, by = "loc_id")
 dat <- merge(tt2, ref, by = "study_id")
 
+
+# explore -----------------------------------------------------------------
+
+
+# how many species for each metric
+dat %>% group_by(tol_class, taxon) %>% count() %>% group_by(tol_class) %>% count()
+
+# how many records for each metric
+dat %>% group_by(tol_class) %>% count()
+
+# how many species have data for ctmax and lt50
+# make identifier for study, taxon, and location
+
+lt <- dat %>% filter(tol_class == "upper lt50") 
+lt <- lt %>% mutate(id = paste(study_id, tax_id, loc_id, acclim_temp, sep = "-"))
+lt <- lt[,c(107,68,6,9,10,15,38,40,41)]
+
+ct <- dat %>% filter(tol_class == "upper ctmax") 
+ct <- ct %>% mutate(id = paste(study_id, tax_id, loc_id, acclim_temp, sep = "-"))
+ct <- ct[,c(107,68,6,9,10,15,38,40,41)]
+
+t <- merge(lt, ct, by = "id") # 105 lt50 and ctmax pairs
+# same species, collection location, study, and acclimation temperature
+tt <- unique(t$taxon.x) # for 24 taxa
+
+# how many species have data for both
+# not restricted to study, location, acclimation temperature
+
+lt <- dat %>% filter(tol_class == "upper lt50") %>% group_by(tax_id, taxon) %>% count()
+ct <- dat %>% filter(tol_class == "upper ctmax") %>% group_by(tax_id, taxon) %>% count()
+
+ch <- merge(lt, ct, by = "tax_id") # 66 taxa have both lt50 and ctmax data
+
+
 # write to file -----------------------------------------------------------
 
 # save the pieces
