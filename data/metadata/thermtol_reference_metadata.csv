@@ -1,0 +1,10 @@
+﻿Variable ,Description,Units,Categories,Notes
+ref_code,Code for the source reference,,,
+ref_source,Source of the reference,,"CNKI, Cereja_2020, GS, GlobTherm_2018, Leiva_et_al_2019, Sundermann_et_al_2022, ref"," Cereja_2020, GlobTherm_2018, Leiva_et_al_2019, Sundermann_et_al_2022 refer to previously published datasets; GS is shorthand for Google Scholar; CNKI is a Chinese literature source; ref refers to references found through included papers"
+ref_language,Language of the reference,,"chinese, danish, english, french, german, spanish",
+pub_year,Publication year ,YYYY,,
+ref_info,Full reference information in English,,,
+ref_info_orig,Full reference information in the original language,,,
+ref_doi,DOI of the reference,,,"Not always available, especially for theses"
+ref_journal_orig,"Journal of the reference, in original language",,,
+study_id,ID for the source study,,,

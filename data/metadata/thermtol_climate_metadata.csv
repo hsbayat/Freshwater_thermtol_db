@@ -1,0 +1,10 @@
+﻿Variable ,Description,Units,Categories,Notes
+loc_id,Location ID,,,
+crd_id,Coordinate ID,,,
+lat,Latitude ,decimal degrees,,
+long,Longitude,decimal degrees,,
+elevation_wc25,Elevation of location,meters,,
+koeppen,Köppen-Geiger climate classification,,,
+country,Name of collection/testing country,,,
+continent,Name of collection/testing continent,,,
+koeppen_gr,Köppen-Geiger climate group,,"Arid, Continental, Temperate, Tropical, Polar",

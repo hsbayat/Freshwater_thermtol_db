@@ -1,0 +1,18 @@
+﻿Variable ,Description,Units,Categories,Notes
+tax_id,ID for each taxon within the database,,,
+ott_id,Open Tree Taxonomy identifier,,,Queried from the Open Tree of Life
+domain,Domain of taxon,,,
+kingdom,Kingdom of taxon,,,
+phylum,Phylum of taxon,,,
+class,Class of taxon,,,
+order,Order of taxon,,,
+family,Family of taxon,,,
+genus,Genus of taxon,,,
+species,Species of taxon,,,
+subspecies,Subspecies (if relevant),,,
+taxon_name,Taxon name,,,
+AphiaID_accepted,AphiaID queried from WORMS,,,WORMS : World Register of Marine Species
+freshwater,Freshwater habitat,,,
+brackish,Brackish habitat,,,
+marine,Marine habitat,,,
+tax_level,Taxonomic level organism is identified to,,,
