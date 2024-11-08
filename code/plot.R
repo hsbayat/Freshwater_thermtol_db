@@ -66,7 +66,7 @@ ggsave(filename = 'figure3.png', path = 'figures', width = 1880, height = 1320, 
 # Figure 4a - ridgeline plot (with bars) for data grouped by Köppen-Geiger classification
 # scaled by sample size
 
-#fig4a <-
+fig4a <-
   ggplot(dat = dat %>% filter(group == "invertebrate"), aes(x = tol, y = order, fill = tol, height = after_stat(count/ max(count)))) + 
   geom_density_ridges(stat = "binline", binwidth = 5, scale = 0.95, linewidth = 0.2) +
   coord_cartesian(clip = "off") +

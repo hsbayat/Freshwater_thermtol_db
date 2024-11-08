@@ -57,12 +57,12 @@ tol <- tol %>% mutate(error_bm_sd = case_when((error_measure_bm == "sd") ~ error
                                            (error_measure_bm == "se") ~ error_bm*sqrt(n)))
 tol <- tol %>% mutate(error_bl_sd = case_when((error_measure_bl == "sd") ~ error,
                                               (error_measure_bl == "se") ~ error_bl*sqrt(n)))
-# check distributions
+# check distributions - ones without data automatically get removed
 ggplot(data = tol, aes(x = error_bm_sd)) + 
   geom_histogram(color = "black") +
   labs(x = "Standard deviation", y = "Number")   + theme_bw(base_size = 25)
 
-# check errors over 25
+# check body mass errors greater than 25 grams
 ch <- tol %>% filter(error_bm_sd > 25) # all large fish species, all ok
 
 ggplot(data = tol, aes(x = error_bl_sd)) + 
