@@ -5,7 +5,7 @@
 
 # by H. S. Bayat
 
-# last edited: 25/10/2024
+# last edited: 22/04/2025
 
 # setup -------------------------------------------------------------------
 
@@ -19,8 +19,8 @@ library(rnaturalearthdata)
 
 # load data ---------------------------------------------------------------
 
-dat <- read.csv('data/thermtol_comb.csv', na.strings = "")
-ref <- read.csv('data/thermtol_reference.csv')
+dat <- read.csv('data/thermtol_comb_final.csv', na.strings = "")
+ref <- read.csv('data/thermtol_reference_final_ch.csv', na.strings = "")
 
 # plot --------------------------------------------------------------------
 
@@ -67,11 +67,11 @@ ggsave(filename = 'figure3.png', path = 'figures', width = 1880, height = 1320, 
 # scaled by sample size
 
 fig4a <-
-  ggplot(dat = dat %>% filter(group == "invertebrate"), aes(x = tol, y = order, fill = tol, height = after_stat(count/ max(count)))) + 
+  ggplot(dat = dat %>% filter(group == "invertebrate"), aes(x = tol, y = koeppen_gr, fill = koeppen_gr, height = after_stat(count/ max(count)))) + 
   geom_density_ridges(stat = "binline", binwidth = 5, scale = 0.95, linewidth = 0.2) +
   coord_cartesian(clip = "off") +
   scale_y_discrete(expand = c(0,0)) + 
-  labs(x = "Temperature (°C)", y = "Order") +
+  labs(x = "Temperature (°C)", y = "Köppen-Geiger climate classification") +
   scale_fill_viridis(begin = 0.1, end = 0.8, discrete = TRUE, option = "H") +
   theme_ridges(font_size = 8, center_axis_labels = TRUE)  + theme(legend.position = "none")
 
@@ -99,7 +99,7 @@ ggsave(filename = 'figure4.png', path = 'figures', width = 1880, height = 900, u
 
 fig5 <- 
   ggplot(data = ref, aes(x = pub_year)) + geom_histogram(binwidth = 3, color = "black", fill = "#575C6DFF", alpha = 0.7) + 
-  scale_y_continuous(expand = c(0,0), limits = c(0,105)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,110)) +
   labs(x = "Year", y = "Number")   + theme_bw(base_size = 15) 
 
 # save Figure 5
