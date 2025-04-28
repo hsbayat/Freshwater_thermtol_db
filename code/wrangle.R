@@ -143,6 +143,7 @@ clim[clim$crd_id == 74 & clim$loc_id == "l_723",]$loc_id <- "l_1086"
 
 # remove one duplicate reference
 ref <- ref[-545,]
+ref$ref_language <- sub("engish","english", ref$ref_language) # fix spelling error
 
 # combine into one dataset
 tt1 <- merge(tol, tax, by = "tax_id")
