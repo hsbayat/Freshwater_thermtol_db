@@ -1,0 +1,84 @@
+﻿endpoint recorded,n,unified,manually checked
+100% mortality,3,mortality,yes
+Absence of righting response,6,LRR,
+Activity decrease,6,other,yes
+Activity increase,6,agitation,
+Cessation of operculum pulsation,6,mortality,yes
+Comma state,6,LOM,
+Complete Equilibrium loss,22,LOE,
+Curling,12,LOE,yes
+DT (desorientacion total),42,LOE,
+Death,433,mortality,
+Equilibrium loss,77,LOE,
+FO,32,OS,yes
+First equilibrium loss,6,LOE,
+Fish is incapable of holding up,8,LOE,
+Foot detachment,4,LOE,
+Increased locomotion,1,agitation,
+L0RR,20,LRR,
+LOE,3246,LOE,
+LOM,341,LOM,
+LORR,173,LRR,
+LRR,195,LRR,
+Lack of response to tactile stimulus,5,LOM,
+Lethal Temperature,2,mortality,
+Lethal temperature,5,mortality,
+Loss of Orientation,12,LOE,
+Loss of attachment,5,LOE,
+Loss of equilibrium,164,LOE,
+Loss of equilibruim,6,LOE,
+Loss of mobility,19,LOM,
+Loss of movement,4,LOM,
+Loss of operculum movement,4,mortality,
+Loss of responsivness,3,LOM,
+Loss of swimming capacity,6,LOE,yes
+Mortality,5,mortality,
+Muscular spasms,6,OS,
+No heartbeat,2,mortality,
+No movement,2,LOM,
+OS,95,OS,
+Only movement is from operculum,8,other,yes
+Onset of tetany,8,LOM,
+Response to touch,2,LOM,
+Sporadic fast activity and muscular spasms,6,OS,
+Stop swimming,36,LOE,yes
+Survival for 10 minutes,12,survival,yes
+Survival for 7 days,12,survival,yes
+Total disorientation,6,LOE,
+Valve closure,8,mortality,yes
+agitation,2,agitation,
+collapse of the animal when rolled over onto their sides,8,LOE,
+coma,24,LOM,
+death,99,mortality,
+decrease in pleopod beats,18,LOE,yes
+first retraction into shell,6,LOM,yes
+fish loses the hability to keep a normal position,8,LOE,
+"foot curl, loss of grip",2,LOE,
+gaping response,12,LOE,yes
+heat coma,3,LOM,
+inactivity,32,LOM,yes
+irregular undulation,24,LOE,yes
+lack of response,58,LOM,
+lack of response to stimuli,13,LOM,
+"lack of response to touch, loss of grip",2,LOM,
+loss in motor coordination,3,LOE,
+loss of attachment,7,LOE,
+loss of coordinated muscle function,24,LOE,
+loss of gaping,4,LOM,yes
+loss of gill movement,6,LOM,yes
+loss of grip,75,LOE,
+loss of movement,49,LOM,
+loss of response,8,LOM,
+loss of righting,8,LOE,
+"loss of tube feet activity, righting ability",2,LOE,
+mortality,822,mortality,
+mortality (cessation of pleopod movement),42,mortality,
+mortality (heart rate decline),4,mortality,
+onset of muscular spasms,11,OS,
+pleopod movement stopped,4,mortality,
+rapid drop in heart beat,4,mortality,yes
+reproduction,1,other,
+shell emersion,4,LOE,yes
+survival,8,survival,yes
+sustained aerobic swimming,2,other,yes
+total disorientation,4,LOE,
