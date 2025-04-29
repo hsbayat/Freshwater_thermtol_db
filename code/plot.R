@@ -88,7 +88,7 @@ fig4b <-
     scale_y_continuous(expand = c(0,0)) + theme(panel.border = element_rect(color = "black", fill = NA, linewidth = 0.5))
 
 # Figure 4 complete
-fig4a + fig4b & plot_annotation(tag_levels = 'A')
+fig4a + fig4b & plot_annotation(tag_levels = 'a')
 
 # save Figure 4
 ggsave(filename = 'figure4.png', path = 'figures', width = 1880, height = 900, units = 'px', dpi = 'print')
