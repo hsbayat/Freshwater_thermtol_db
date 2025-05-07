@@ -67,7 +67,7 @@ ggsave(filename = 'figure3.png', path = 'figures', width = 1880, height = 1320, 
 # scaled by sample size
 
 fig4a <-
-  ggplot(dat = dat %>% filter(group == "invertebrate"), aes(x = tol, y = koeppen_gr, fill = koeppen_gr, height = after_stat(count/ max(count)))) + 
+  ggplot(dat = dat, aes(x = tol, y = reorder(koeppen_gr, n), fill = koeppen_gr, height = after_stat(count/ max(count)))) + 
   geom_density_ridges(stat = "binline", binwidth = 5, scale = 0.95, linewidth = 0.2) +
   coord_cartesian(clip = "off") +
   scale_y_discrete(expand = c(0,0)) + 
@@ -78,6 +78,7 @@ fig4a <-
 # Figure 4b - stacked bar plot for Köppen and language
 
 lang <- dat %>% group_by(koeppen_gr, ref_language) %>% count() %>% arrange(desc(n))
+lang$ref_language <- str_to_title(lang$ref_language)
 
 fig4b <- 
   ggplot(data = lang, aes(fill = reorder(ref_language, -n), y = n, x = koeppen_gr)) +
