@@ -5,7 +5,7 @@
 
 # by H. S. Bayat
 
-# last edited: 22/04/2025
+# last edited: 08/07/2025
 
 # setup -------------------------------------------------------------------
 
@@ -46,6 +46,15 @@ ggsave(filename = 'figure2.png', path = 'figures', width = 1880, height = 1000, 
 
 # Figure 3 ----------------------------------------------------------------
 # distribution of different metrics - ridgeline plot
+
+dat <- dat %>% mutate(tol_class = case_when(tol_class == "upper other" ~ "Upper other", 
+                                            tol_class == "upper ltmax" ~ "Upper LTmax",
+                                            tol_class == "upper lt50" ~ "Upper LT50",
+                                            tol_class == "upper ctmax" ~ "Upper CTmax",
+                                            tol_class == "lower other" ~ "Lower other",
+                                            tol_class == "lower ltmin" ~ "Lower LTmin",
+                                            tol_class == "lower lt50" ~ "Lower LT50",
+                                            tol_class == "lower ctmin" ~ "Lower CTmin"))
 
 fig3 <- 
   ggplot(dat = dat, aes(x = tol, y = tol_class, fill = after_stat(x))) + 
