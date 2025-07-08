@@ -47,14 +47,14 @@ ggsave(filename = 'figure2.png', path = 'figures', width = 1880, height = 1000, 
 # Figure 3 ----------------------------------------------------------------
 # distribution of different metrics - ridgeline plot
 
-dat <- dat %>% mutate(tol_class = case_when(tol_class == "upper other" ~ "Upper other", 
-                                            tol_class == "upper ltmax" ~ "Upper LTmax",
-                                            tol_class == "upper lt50" ~ "Upper LT50",
-                                            tol_class == "upper ctmax" ~ "Upper CTmax",
-                                            tol_class == "lower other" ~ "Lower other",
-                                            tol_class == "lower ltmin" ~ "Lower LTmin",
-                                            tol_class == "lower lt50" ~ "Lower LT50",
-                                            tol_class == "lower ctmin" ~ "Lower CTmin"))
+dat <- dat %>% mutate(tol_class = case_when(tol_class == "upper other" ~ "upper other", 
+                                            tol_class == "upper ltmax" ~ "upper LTmax",
+                                            tol_class == "upper lt50" ~ "upper LT50",
+                                            tol_class == "upper ctmax" ~ "upper CTmax",
+                                            tol_class == "lower other" ~ "lower other",
+                                            tol_class == "lower ltmin" ~ "lower LTmin",
+                                            tol_class == "lower lt50" ~ "lower LT50",
+                                            tol_class == "lower ctmin" ~ "lower CTmin"))
 
 fig3 <- 
   ggplot(dat = dat, aes(x = tol, y = tol_class, fill = after_stat(x))) + 
